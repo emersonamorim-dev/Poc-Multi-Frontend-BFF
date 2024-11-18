@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<div *ngIf="token; else authTabs">
+  <app-dashboard></app-dashboard>
+  <button (click)="handleLogout()">Sair</button>
+</div>
+
+<ng-template #authTabs>
+  <div class="tabs">
+    <button (click)="showTab('login')">Entrar</button>
+    <button (click)="showTab('register')">Cadastrar</button>
+  </div>
+  <div id="content" [ngSwitch]="activeTab">
+    <app-login *ngSwitchCase="'login'"></app-login>
+    <app-register *ngSwitchCase="'register'"></app-register>
+  </div>
+</ng-template>
+
+<app-footer></app-footer>

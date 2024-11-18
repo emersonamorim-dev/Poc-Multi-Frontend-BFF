@@ -1,0 +1,25 @@
+header {
+    background-color: #6a0dad;  
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;  
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; 
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    font-size: 2em;
+    color: #fff;
+}
+

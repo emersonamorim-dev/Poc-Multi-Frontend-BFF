@@ -1,0 +1,18 @@
+footer {
+    background-color: #8a2be2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed; 
+    bottom: 0;       
+    width: 100%;   
+    font-family: 'Roboto', sans-serif;  
+}
+
+h4 {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    color: #fff;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}

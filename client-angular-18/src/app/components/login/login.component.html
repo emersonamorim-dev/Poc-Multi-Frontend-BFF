@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h2>Entrar</h2>
+
+  <div>
+    <input id="email" formControlName="email" type="email" placeholder="Email" />
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <small class="error">{{ getErrorMessage('email') }}</small>
+    </div>
+  </div>
+
+  <div>
+    <input id="password" formControlName="password" type="password" placeholder="Senha" />
+    <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+      <small class="error">{{ getErrorMessage('password') }}</small>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+</form>
+
+<!-- Exibição de erros globais -->
+<div *ngIf="error$ | async as error" class="error-message">
+  {{ error }}
+</div>
+
+<!-- Exibição de sucesso -->
+<div *ngIf="success$ | async" class="success-message">
+  Login realizado com sucesso!
+</div>
+

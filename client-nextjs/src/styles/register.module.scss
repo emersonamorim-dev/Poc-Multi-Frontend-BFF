@@ -1,0 +1,92 @@
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.inputField {
+    width: 100%; 
+    max-width: 300px; 
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1rem; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+@media (max-width: 600px) {
+    .inputField {
+        font-size: 0.875rem; 
+        padding: 10px; 
+    }
+}
+
+.inputField:focus {
+    border-color: #6a0dad;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.4);
+}
+
+.submitButton {
+    padding: 12px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    max-width: 300px; 
+    margin-top: 15px;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #5c0ba1;
+}
+
+.submitButton:disabled {
+    background-color: #8a2be2;
+    cursor: not-allowed;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .registerForm {
+        width: 90%;
+    }
+
+    .inputField {
+        font-size: 0.875rem;
+        padding: 10px;
+    }
+
+    .submitButton {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "Frontend",
+  "author": "Emerson Amorim",
+  "scripts": {
+    "start": "npm-run-all --parallel dev server",
+    "dev": "sass --watch src/styles:dist/styles",
+    "build-css": "sass src/styles:dist/styles",
+    "server": "npx live-server"
+  },
+  "dependencies": {
+    "client": "file:",
+    "cors": "^2.8.5",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.12.0",
+    "sass": "^1.78.0"
+  }
+}

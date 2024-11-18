@@ -1,0 +1,53 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h2>Cadastrar</h2>
+
+  <div>
+    <input
+      type="text"
+      placeholder="Nome"
+      formControlName="name"
+      required
+    />
+    <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error">
+      Nome é obrigatório.
+    </div>
+  </div>
+
+  <div>
+    <input
+      type="email"
+      placeholder="Email"
+      formControlName="email"
+      required
+    />
+    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error">
+      Insira um email válido.
+    </div>
+  </div>
+
+  <div>
+    <input
+      type="password"
+      placeholder="Senha"
+      formControlName="password"
+      required
+    />
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+      Senha é obrigatória.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+
+  <!-- Exibição de erro -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
+
+  <!-- Exibição de sucesso -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+</form>

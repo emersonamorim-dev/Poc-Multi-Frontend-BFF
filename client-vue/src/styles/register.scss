@@ -1,0 +1,50 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+input {
+    width: 100%; 
+    max-width: 300px; 
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1rem; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box; 
+}
+
+@media (max-width: 600px) {
+    input {
+        font-size: 0.875rem; 
+        padding: 10px; 
+    }
+}
+
+button {
+    padding: 10px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #8a2be2;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #5a0c99;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #6a0dad; 
+    text-align: center;
+}
