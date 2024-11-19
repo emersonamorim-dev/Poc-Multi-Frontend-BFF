@@ -9,10 +9,12 @@ footer {
     font-family: 'Roboto', sans-serif;  
 }
 
+
 h4 {
-    font-family: 'Arial', sans-serif;
-    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;  
+    font-size: 0.8em;
     color: #fff;
     margin-bottom: 30px;
     line-height: 1.6;
 }
+
