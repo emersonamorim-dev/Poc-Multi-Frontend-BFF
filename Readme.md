@@ -42,7 +42,7 @@ Framework para React com funcionalidades com Typescript, Vite e Redux para uma a
 
 - Vue 3:
 
-- Vuex: Gerenciador de estado centralizado para aplicações Vue, essencial para controle do estado da autenticação e dados do usuário.
+Vuex: Gerenciador de estado centralizado para aplicações Vue, essencial para controle do estado da autenticação e dados do usuário.
 
 
 - Next.js 15 com Turbopack e Redux:
