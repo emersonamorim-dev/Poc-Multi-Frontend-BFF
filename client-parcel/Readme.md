@@ -1,4 +1,4 @@
-### POC - JS/Redux - Aplicação Frontend - Sistema de Autenticação com Dashboard 🚀 🔄 🌐
+### POC - Javascript com Redux e Parcel - Aplicação Frontend - Sistema de Autenticação com Dashboard 🚀 🔄 🌐
 
 Codificação de aplicação com Javascript Vanila para um sistema de autenticação frontend desenvolvido como uma Single Page Application (SPA), com gerenciamento global de estado via Redux. O objetivo da aplicação é permitir que os usuários façam login, registrem-se, e naveguem para um dashboard protegido por autenticação. O dashboard é exibido apenas para usuários autenticados, garantindo segurança e controle de acesso.
 
