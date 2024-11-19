@@ -36,23 +36,24 @@ Redux (React), Vuex (Vue) e NgRx (Angular) são usados para garantir o gerenciam
 
 - NgRx: Biblioteca para o gerenciamento de estado reativo em Angular, útil para rastrear o estado global da aplicação, como a autenticação e as informações do usuário.
 - RxJS: Utilizado para programação reativa, que facilita o gerenciamento de fluxos de dados assíncronos.
-React:
 
+- React:
+Framework para React com funcionalidades com Typescript, Vite e Redux para uma aplicação moderna e escalável.
 
 - Vue 3:
 
 - Vuex: Gerenciador de estado centralizado para aplicações Vue, essencial para controle do estado da autenticação e dados do usuário.
 
 
-- Next.js 15 com Turbopack:
-
+- Next.js 15 com Turbopack e Redux:
 Framework para React com funcionalidades como SSR (Server Side Rendering) e SSG (Static Site Generation). Usado para criar páginas dinâmicas que consomem dados do BFF.
 
-- Parcel:
+- Javascript com Parcel e Redux:
 
 Bundler de aplicações mais simples. Ideal para aplicações menores ou protótipos rápidos.
 
-Para começar a usar o projeto, siga as etapas abaixo:
+
+#### Para começar a usar o projeto, siga as etapas abaixo:
 
 Clone este repositório em sua máquina local:
 ```
