@@ -1,6 +1,6 @@
 ### Aplicação Poc-Multi-Frontend-BFF - Sistema de Autenticação com Dashboard 🚀 🔄 🌐
 
-Codificação de projeto para Poc-Multi-Frontend-BFF é uma Prova de Conceito como objetivo a criação de uma aplicação moderna, escalável e flexível, que integra múltiplos frameworks front-end (Angular 18, React, Vue 3, Next.js 15 com Turbopack e Parcel) com um Backend for Frontend (BFF), visando fornecer uma arquitetura unificada para autenticação, registro, e dashboards de usuários com áreas logadas. A aplicação utiliza Redux, Vuex, e NgRx para gerenciar o estado em cada frontend, além de ser completamente containerizada com Docker para uma implementação simples e robusta.
+Codificação de projeto para Poc-Multi-Frontend-BFF é uma Prova de Conceito com objetivo para criação de uma aplicação moderna, escalável e flexível, que integra múltiplos frameworks front-end (Angular 18, React, Vue 3, Next.js 15 com Turbopack e Parcel) com um Backend for Frontend (BFF), visando fornecer uma arquitetura unificada para autenticação, registro, e dashboards de usuários com áreas logadas. A aplicação utiliza Redux, Vuex, e NgRx para gerenciar o estado em cada frontend, além de ser completamente containerizada com Docker para uma implementação simples e robusta.
 
 
 #### Arquitetura
