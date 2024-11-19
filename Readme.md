@@ -12,7 +12,7 @@ A arquitetura da aplicação segue uma abordagem modular e flexível, permitindo
 - React com Redux (para gerenciamento de estado)
 - Vue 3 com Vuex (para gerenciamento de estado)
 - Next.js 15 (com Redux ou React Context)
-- Javascript com Parcel (como bundler para aplicações simples ou mais rápido e Redux
+- Javascript com Parcel e Redux
 - Backend for Frontend (BFF) Node com Typescript:
 
 O BFF é uma camada intermediária entre os clientes e o backend. Ele é responsável por adaptar as respostas de dados da API para as necessidades de cada frontend, oferecendo endpoints otimizados para cada cliente.
