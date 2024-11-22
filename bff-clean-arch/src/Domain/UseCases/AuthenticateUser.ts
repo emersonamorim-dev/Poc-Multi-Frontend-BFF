@@ -5,8 +5,6 @@ import { UserRepository } from '../UserRepository';
 import bcrypt from 'bcryptjs';
 
 
-
-
 interface AuthenticateUserRequest {
   email: string;
   password: string;
