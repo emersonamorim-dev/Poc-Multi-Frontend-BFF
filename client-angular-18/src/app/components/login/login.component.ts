@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { AppState } from '../../store/app.state';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service'; 
@@ -20,11 +21,13 @@ import { selectLoginError } from '../../store/selectors/auth.selectors';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit, OnDestroy {
   loginForm: FormGroup;
   error$: Observable<string | null>;
   token$: Observable<string | null>;
   success$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  private destroy$ = new Subject<void>(); 
 
   constructor(
     private fb: FormBuilder,
@@ -41,25 +44,28 @@ export class LoginComponent {
     this.error$ = this.store.select(selectError);
     this.error$ = this.store.select(selectLoginError);
 
-    // Ouvindo o token
-    this.token$.subscribe(token => {
-      if (token) {
-        localStorage.setItem('token', token);
-        this.success$.next(true);
-    
-        window.location.href = '/dashboard';  
-      }
-    });
+    // Ouvindo o token com takeUntil para evitar vazamentos
+    this.token$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(token => {
+        if (token) {
+          localStorage.setItem('token', token);
+          this.success$.next(true);
+
+          window.location.href = '/dashboard';  
+        }
+      });
   }
 
   ngOnInit() {
-    this.store.select(selectIsAuthenticated).subscribe(isAuthenticated => {
-      if (isAuthenticated) {
-        this.router.navigate(['/dashboard']);
-      }
-    });
+    this.store.select(selectIsAuthenticated)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(isAuthenticated => {
+        if (isAuthenticated) {
+          this.router.navigate(['/dashboard']);
+        }
+      });
   }
-
 
   private passwordValidator(control: any) {
     const value = control.value;
@@ -101,15 +107,25 @@ export class LoginComponent {
     }
   }
 
-
   getErrorMessage(controlName: string): string {
     const control = this.loginForm.get(controlName);
     if (control?.hasError('required')) {
-      return 'Este campo é obrigatório';
+      return 'Este campo é obrigatório.';
     }
     if (control?.hasError('email')) {
-      return 'Formato de email inválido';
+      return 'Informe um e-mail válido.';
+    }
+    if (control?.hasError('minLength')) {
+      return 'A senha deve ter no mínimo 6 caracteres.';
+    }
+    if (control?.hasError('complexity')) {
+      return 'A senha deve conter letras e números.';
     }
     return '';
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(); 
+    this.destroy$.complete(); 
   }
 }
